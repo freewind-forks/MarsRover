@@ -8,10 +8,9 @@ public class MarsRover {
     private Rover rover;
     private int x;
     private int y;
-    private Rover roverToBeMoved;
 
     public MarsRover(int width, int height) {
-        rovers = new Rover[width][height];
+        rovers = new Rover[width + 1][height + 1];
     }
 
     public MarsRover place(Rover rover) {

@@ -5,6 +5,7 @@ import java.util.List;
 import static cn.thoughtworks.academy.marsrover.Direction.*;
 import static cn.thoughtworks.academy.marsrover.RoverCommand.Move;
 import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnLeft;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnRight;
 
 public class Rover {
     private Direction direction;
@@ -27,8 +28,23 @@ public class Rover {
     private void execute(RoverCommand command) {
         if (command.equals(TurnLeft)) {
             turnLeft();
+        } else if (command.equals(TurnRight)) {
+            turnRight();
         } else if (command.equals(Move)) {
             moveForward();
+        }
+
+    }
+
+    private void turnRight() {
+        if (direction.equals(NORTH)) {
+            this.direction = EAST;
+        } else if (direction.equals(WEST)) {
+            this.direction = NORTH;
+        } else if (direction.equals(SOUTH)) {
+            this.direction = WEST;
+        } else if (direction.equals(EAST)) {
+            this.direction = SOUTH;
         }
     }
 
