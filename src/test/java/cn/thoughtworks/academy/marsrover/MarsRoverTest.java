@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cn.thoughtworks.academy.marsrover.Direction.*;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.Move;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnLeft;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnRight;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.MOVE;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.TURN_LEFT;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.TURN_RIGHT;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
@@ -44,15 +44,15 @@ public class MarsRoverTest {
         marsRover.place(rover).at(1, 2).faceTo(NORTH);
 
         List<RoverCommand> commands = new ArrayList<RoverCommand>();
-        commands.add(TurnLeft);
-        commands.add(Move);
-        commands.add(TurnLeft);
-        commands.add(Move);
-        commands.add(TurnLeft);
-        commands.add(Move);
-        commands.add(TurnLeft);
-        commands.add(Move);
-        commands.add(Move);
+        commands.add(TURN_LEFT);
+        commands.add(MOVE);
+        commands.add(TURN_LEFT);
+        commands.add(MOVE);
+        commands.add(TURN_LEFT);
+        commands.add(MOVE);
+        commands.add(TURN_LEFT);
+        commands.add(MOVE);
+        commands.add(MOVE);
         rover.execute(commands);
 
         Rover roverOnMap = marsRover.get(1, 3);
@@ -66,16 +66,16 @@ public class MarsRoverTest {
         marsRover.place(rover).at(3, 3).faceTo(EAST);
 
         List<RoverCommand> commands = new ArrayList<RoverCommand>();
-        commands.add(Move);
-        commands.add(Move);
-        commands.add(TurnRight);
-        commands.add(Move);
-        commands.add(Move);
-        commands.add(TurnRight);
-        commands.add(Move);
-        commands.add(TurnRight);
-        commands.add(TurnRight);
-        commands.add(Move);
+        commands.add(MOVE);
+        commands.add(MOVE);
+        commands.add(TURN_RIGHT);
+        commands.add(MOVE);
+        commands.add(MOVE);
+        commands.add(TURN_RIGHT);
+        commands.add(MOVE);
+        commands.add(TURN_RIGHT);
+        commands.add(TURN_RIGHT);
+        commands.add(MOVE);
         rover.execute(commands);
 
         Rover roverOnMap = marsRover.get(5, 1);

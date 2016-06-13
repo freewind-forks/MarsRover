@@ -3,9 +3,9 @@ package cn.thoughtworks.academy.marsrover;
 import java.util.List;
 
 import static cn.thoughtworks.academy.marsrover.Direction.*;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.Move;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnLeft;
-import static cn.thoughtworks.academy.marsrover.RoverCommand.TurnRight;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.MOVE;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.TURN_LEFT;
+import static cn.thoughtworks.academy.marsrover.RoverCommand.TURN_RIGHT;
 
 public class Rover {
     private Direction direction;
@@ -26,11 +26,11 @@ public class Rover {
     }
 
     private void execute(RoverCommand command) {
-        if (command.equals(TurnLeft)) {
+        if (command.equals(TURN_LEFT)) {
             turnLeft();
-        } else if (command.equals(TurnRight)) {
+        } else if (command.equals(TURN_RIGHT)) {
             turnRight();
-        } else if (command.equals(Move)) {
+        } else if (command.equals(MOVE)) {
             moveForward();
         }
 
@@ -53,6 +53,7 @@ public class Rover {
             marsRover.move(this).to(this.direction);
         } catch (RoverNotFoundException e) {
             e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
