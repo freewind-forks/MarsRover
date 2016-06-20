@@ -36,11 +36,11 @@ public class MarsRover {
 
 
     public MarsRover move(Rover rover) throws RoverNotFoundException {
-        for (int x = 0; x < rovers.length; x++) {
-            for (int y = 0; y < rovers[x].length; y++) {
-                if (rover.equals(rovers[x][y])) {
-                    this.x = x;
-                    this.y = y;
+        for (int i = 0; i < rovers.length; i++) {
+            for (int j = 0; j < rovers[i].length; j++) {
+                if (rover.equals(rovers[i][j])) {
+                    this.x = i;
+                    this.y = j;
                     return this;
                 }
             }
