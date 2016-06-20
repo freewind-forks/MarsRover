@@ -49,15 +49,8 @@ public class MarsRover {
     }
 
     public void to(Direction direction) {
-        if (direction.equals(WEST)) {
-            rovers[x - 1][y] = rovers[x][y];
-        } else if (direction.equals(Direction.SOUTH)) {
-            rovers[x][y - 1] = rovers[x][y];
-        } else if (direction.equals(Direction.EAST)) {
-            rovers[x + 1][y] = rovers[x][y];
-        } else if (direction.equals(Direction.NORTH)) {
-            rovers[x][y + 1] = rovers[x][y];
-        }
+        Offset offset = direction.offset();
+        rovers[x + offset.getX()][y + offset.getY()] = rovers[x][y];
         rovers[x][y] = null;
     }
 }

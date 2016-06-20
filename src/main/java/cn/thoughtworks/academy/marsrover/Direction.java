@@ -11,6 +11,10 @@ public enum Direction {
         public Direction right() {
             return NORTH;
         }
+
+        public Offset offset() {
+            return new Offset(-1, 0);
+        }
     },
     SOUTH() {
         @Override
@@ -21,6 +25,10 @@ public enum Direction {
         @Override
         public Direction right() {
             return WEST;
+        }
+
+        public Offset offset() {
+            return new Offset(0, -1);
         }
     },
     EAST() {
@@ -33,6 +41,10 @@ public enum Direction {
         public Direction right() {
             return SOUTH;
         }
+
+        public Offset offset() {
+            return new Offset(1, 0);
+        }
     },
     NORTH() {
         @Override
@@ -44,9 +56,15 @@ public enum Direction {
         public Direction right() {
             return EAST;
         }
+
+        public Offset offset() {
+            return new Offset(0, 1);
+        }
     };
 
     public abstract Direction left();
 
     public abstract Direction right();
+
+    public abstract Offset offset();
 }
