@@ -12,6 +12,7 @@ public enum Direction {
             return NORTH;
         }
 
+        @Override
         public Offset offset() {
             return new Offset(-1, 0);
         }
@@ -27,6 +28,7 @@ public enum Direction {
             return WEST;
         }
 
+        @Override
         public Offset offset() {
             return new Offset(0, -1);
         }
@@ -42,6 +44,7 @@ public enum Direction {
             return SOUTH;
         }
 
+        @Override
         public Offset offset() {
             return new Offset(1, 0);
         }
@@ -57,6 +60,7 @@ public enum Direction {
             return EAST;
         }
 
+        @Override
         public Offset offset() {
             return new Offset(0, 1);
         }
